@@ -6,8 +6,17 @@ class TextDisplay extends Component {
 		super(props, context)
 	}
 
+	handleClick() {
+		this.props.deleteLetter()
+	}
+
 	render() {
-		return <div>I'm displaying text: {this.props.text}</div>
+		return (
+			<div>
+				<div>I'm displaying text: {this.props.text}</div>
+				<button onClick={this.handleClick.bind(this)}>delete one letter</button>
+			</div>
+		)
 	}
 }
 
